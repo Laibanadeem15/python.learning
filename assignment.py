@@ -1,3 +1,4 @@
+import math
 name = input("Enter your name")
 print(f"Hello, {name}! Let's explore your favourite number")
 
@@ -30,13 +31,15 @@ for num in numbers:
     total_sum += num
 
 print(f"Amazing! The sum of your favorite numbers is: {total_sum}")
-is_prime == True 
-if sum_of_num <= 1: 
-    is_prime == False
-for x in range (2, sum_of_num):
-    if sum_of_num % x == 0: 
+is_prime = True
+if total_sum <= 1:
     is_prime = False
-if is_prime == False:
-print(f"Great job! The number (sum_of_num) is not a prime number.")
 else:
-print (f"Wow! The number (sum_of_num) is a prime number.")
+    for i in range(2,int(math.sqrt(total_sum))+1):
+        if total_sum % i == 0:
+            is_prime = False
+            break
+if is_prime:
+    print(f"Wow! The sum {total_sum} is a prime number!")
+else:
+    print(f"The sum {total_sum} is not a prime number!.")
